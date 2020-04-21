@@ -12,33 +12,33 @@ class App extends React.Component{
 
 incrementVariableOne = () => {
   this.setState({
-    countOne: this.state.countOne + 1
+  countOne: this.state.countOne + 1
   })
 }
 
 incrementVariableTwo = () => {
   this.setState({
-    countTwo: this.state.countTwo + 1
+  countTwo: this.state.countTwo + 1
   })
 }
 
 incrementVariableThree = () => {
   this.setState({
-    countThree: this.state.countThree + 1
+  countThree: this.state.countThree + 1
   })
 }
 
   render(){
   return (
-    <AppBar position = "static">
-    <Toolbar>
+  <AppBar position = "static">
+  <Toolbar>
       <Grid
-        container
-        direction = "row"
-        justify="space-between"
-        alignItems="center">
+    container
+    direction = "row"
+    justify="space-between"
+    alignItems="center">
           <Grid item >
-            <Button 
+      <Button 
               color = "secondary" 
               variant="outlined" 
               size="small" 
@@ -47,10 +47,10 @@ incrementVariableThree = () => {
                   Increment Me
                   <br></br>
                   {this.state.countOne}
-            </Button>
+      </Button>
           </Grid>
           <Grid item >
-            <Button 
+      <Button 
               color = "secondary" 
               variant="outlined" 
               size="small" 
@@ -59,10 +59,10 @@ incrementVariableThree = () => {
                   Increment Me
                   <br></br>
                   {this.state.countTwo}
-            </Button>
+      </Button>
           </Grid>
           <Grid item >
-            <Button 
+      <Button 
               color = "secondary" 
               variant="outlined" 
               size="small" 
@@ -71,14 +71,14 @@ incrementVariableThree = () => {
                   Increment Me
                   <br></br>
                   {this.state.countThree}
-            </Button>
+      </Button>
           </Grid>
       </Grid>
       <Snackbar 
-        open={this.state.countOne === 10 && this.state.countTwo === 10 && this.state.countThree === 10} 
-        message="You have reached ten clicks on each button!"/>
-    </Toolbar>
-    </AppBar>
+    open={this.state.countOne === 10 && this.state.countTwo === 10 && this.state.countThree === 10} 
+    message="You have reached ten clicks on each button!"/>
+  </Toolbar>
+  </AppBar>
   );
 }
 }
