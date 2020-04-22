@@ -3,9 +3,9 @@ import Button from '@material-ui/core/Button';
 import { Toolbar, AppBar, Snackbar, Grid } from '@material-ui/core';
 
 enum Buttons {
-  Button1 = "button1",
-  Button2 = "button2",
-  Button3 = "button3",
+  Button1,
+  Button2,
+  Button3,
 }
 
 export interface AppProps {
@@ -30,7 +30,7 @@ constructor(props:AppProps) {
   }
 }
 
-incrementVariable = (whichButton:Buttons|string) => {
+incrementVariable = (whichButton:Buttons) => {
   const {
     button1,
     button2,
@@ -75,7 +75,7 @@ incrementVariable = (whichButton:Buttons|string) => {
                 color="secondary"
                 variant="outlined"
                 size="small"
-                onClick={() => this.incrementVariable("button1")} 
+                onClick={() => this.incrementVariable(Buttons.Button1)} 
                 fullWidth={true}
                 disabled={button1 === 10}
               >
@@ -89,7 +89,7 @@ incrementVariable = (whichButton:Buttons|string) => {
                 color="secondary"
                 variant="outlined"
                 size="small"
-                onClick={() => this.incrementVariable("button2")} 
+                onClick={() => this.incrementVariable(Buttons.Button2)} 
                 fullWidth={true}
                 disabled={button2 === 10}
               >
@@ -103,7 +103,7 @@ incrementVariable = (whichButton:Buttons|string) => {
                 color="secondary"
                 variant="outlined"
                 size="small"
-                onClick={() => this.incrementVariable("button3")} 
+                onClick={() => this.incrementVariable(Buttons.Button3)} 
                 fullWidth={true}
                 disabled={button3 === 10}
               >
