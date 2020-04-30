@@ -13,6 +13,9 @@ import {
   Snackbar,
 } from '@material-ui/core';
 import styles from './header.module.scss';
+import {
+  Link
+} from "react-router-dom";
 
 enum Buttons {
   Button1,
@@ -29,6 +32,10 @@ export interface HeaderProps {
   button1: number,
   button2: number,
   button3: number,
+}
+
+const linkStyle = {
+  color: 'black'
 }
 
 const Header = (props:HeaderProps) => {
@@ -57,22 +64,24 @@ const Header = (props:HeaderProps) => {
             open={open}
           >
             <div style={{ minWidth: '20vw' }}>
-              <MenuItem onClick={() => handleDrawerClick()}>
-                <AcUnit className={styles.iconSpacing} />
-                New
-              </MenuItem>
-              <MenuItem onClick={() => handleDrawerClick()}>
-                <AccessAlarm className={styles.iconSpacing} />
-                New
-              </MenuItem>
-              <MenuItem onClick={() => handleDrawerClick()}>
-                <DeckRounded className={styles.iconSpacing} />
-                New
-              </MenuItem>
-              <MenuItem onClick={() => handleDrawerClick()}>
-                <LoopSharp className={styles.iconSpacing} />
-                New
-              </MenuItem>
+              <Link style ={linkStyle} to='/'>
+                <MenuItem onClick={() => handleDrawerClick()}>
+                  <AcUnit className={styles.iconSpacing} />
+                  Home
+                </MenuItem>
+              </Link>
+              <Link style ={linkStyle} to='/Page1'>
+                <MenuItem onClick={() => handleDrawerClick()}>
+                  <AccessAlarm className={styles.iconSpacing} />
+                  Page 1
+                </MenuItem>
+              </Link>
+              <Link style ={linkStyle} to='/Page2'>
+                <MenuItem onClick={() => handleDrawerClick()}>
+                  <DeckRounded className={styles.iconSpacing} />
+                  Page 2
+                </MenuItem>
+              </Link>
             </div>
           </Drawer>
           <Grid container justify="space-between">
