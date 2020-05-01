@@ -2,20 +2,29 @@ html {
     background-color: #FFFFFF;
   }
   
-  .headerStyle {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    left: 0px;
-    top: 0px;
-    background:#3c81c5
-  }
-  
-  .color {
-    background: #3c81c5;
-  }
-  
-  .iconSpacing {
-    margin: 10px;
-  }
-    
+.headerStyle {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  left: 0px;
+  top: 0px;
+  background:#3c81c5
+}
+
+.color {
+  background: #3c81c5;
+}
+
+.iconSpacing {
+  margin: 10px;
+}
+
+.tableSpacing {
+  position: absolute;
+  margin-top: 50px;
+  width: 100vw;
+}
+
+.gridSpacing {
+  width: 100px;
+}
