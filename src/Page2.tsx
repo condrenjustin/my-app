@@ -5,8 +5,6 @@ class Page2 extends React.Component{
   render() {
     return (
       <div>
-        <br/>
-        <br/>
         <h1>
           This is Page 2
         </h1>
