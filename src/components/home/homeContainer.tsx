@@ -1,38 +1,63 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 import Home from '../home/home';
-import { setHomeDataActionCreator } from '../../actions/homeActions';
+import { setTableActionCreator } from '../../actions/homeActions';
+import { connect } from 'react-redux';
 
 export interface HomeContainerProps {
-  // dispatch: (action:any) => any;
+  reducedData: {homeData:string[][], homeColumns:string[]}
+  dispatch: (action:any) => any;
 }
 
 class HomeContainer extends React.Component<HomeContainerProps> {
-  render() {
+  componentDidMount = () => {
     const columns = ["Name", "Company", "City", "State"];
 
     const data = [
-      ["Joe James", "Test Corp", "Yonkers", "NY"],
+      ["Joe Joe", "Test Corp", "Yonkers", "NY"],
       ["John Walsh", "Test Corp", "Hartford", "CT"],
       ["Bob Herm", "Test Corp", "Tampa", "FL"],
       ["James Houston", "Test Corp", "Dallas", "TX"],
     ];
 
+    const { dispatch } = this.props;
+
+    dispatch(setTableActionCreator(data, columns));
+  }
+  
+  render() {
+    const { reducedData } = this.props;
+
+
     const title = 'Our Friends'
+
+    const options = { 
+      selectableRows: 'single',
+    }
 
     return (
       <div>
         <Home
           tableHeight={300}
-          tableOptions={null}
+          tableOptions={options}
           tableStyle={null}
           tableTitle={title}
-          data={data}
-          columns={columns}
+          data={reducedData.homeData}
+          columns={reducedData.homeColumns}
         />
       </div>
     );
   }
 }
 
-export default HomeContainer
+function mapStateToProps(state:any) {
+  const { homeReducers } = state;
+  return { 
+    reducedData: { 
+      homeData: homeReducers.reducedData.data,
+      homeColumns: homeReducers.reducedData.columns,
+    }
+  }
+}
+
+export default connect(mapStateToProps)(HomeContainer);
