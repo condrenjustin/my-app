@@ -1,6 +1,7 @@
 import React from 'react';
 // import { connect } from 'react-redux';
-import Home from './Home';
+import Home from '../home/home';
+import { setHomeDataActionCreator } from '../../actions/homeActions';
 
 export interface HomeContainerProps {
   // dispatch: (action:any) => any;
@@ -17,13 +18,15 @@ class HomeContainer extends React.Component<HomeContainerProps> {
       ["James Houston", "Test Corp", "Dallas", "TX"],
     ];
 
+    const title = 'Our Friends'
+
     return (
       <div>
         <Home
           tableHeight={300}
           tableOptions={null}
           tableStyle={null}
-          tableTitle={'People'}
+          tableTitle={title}
           data={data}
           columns={columns}
         />
