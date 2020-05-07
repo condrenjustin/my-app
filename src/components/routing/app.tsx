@@ -1,13 +1,12 @@
 import React from 'react';
-import HeaderContainer from './HeaderContainer';
-import Page1 from './Page1';
-import Page2 from './Page2';
-import HomeContainer from './HomeContainer';
+import HeaderContainer from '../header/headerContainer';
+import Page1 from '../../page1';
+import Page2 from '../../page2';
+import HomeContainer from '../home/homeContainer';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 class App extends React.Component{

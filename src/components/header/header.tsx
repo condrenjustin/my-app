@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
-import { AcUnit, AccessAlarm, DeckRounded, LoopSharp } from '@material-ui/icons';
+import { AcUnit, AccessAlarm, DeckRounded } from '@material-ui/icons';
 import {
   Grid,
   Button,

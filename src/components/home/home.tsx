@@ -1,7 +1,6 @@
 import React from 'react';
-import Table from './Table';
-import styles from './header.module.scss';
-import { Grid } from '@material-ui/core';
+import Table from '../common/table';
+import styles from './home.module.scss';
 
 export interface HomeProps{
   tableHeight:number;
@@ -24,14 +23,14 @@ const Home = (props:HomeProps) => {
 
   return (
     <div className={styles.tableSpacing}>
-          <Table
-            data={data}
-            columns={columns}
-            tableHeight={tableHeight}
-            tableOptions={tableOptions}
-            tableTitle={tableTitle}
-            tableStyle={tableStyle}
-          />
+      <Table
+        data={data}
+        columns={columns}
+        tableHeight={tableHeight}
+        tableOptions={tableOptions}
+        tableTitle={tableTitle}
+        tableStyle={tableStyle}
+      />
     </div>
   );
 };
