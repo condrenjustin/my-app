@@ -31,24 +31,24 @@ function homeReducer(
 				// return state as it is
 				...state,
 				// change state data
-				data: { ...state.data, ...action.payload.data },
-				columns: { ...state.columns, ...action.payload.columns }
+				data: action.payload.data,
+				columns: action.payload.columns,
 			};
 		case HomeActions.SET_HOME_API_FLAG:
 			return{
 				...state,
-		api: {
-			...state.api,
-			data: { ...state.api.flags, ...action.payload },
-		},
+				api: {
+					...state.api,
+					data: { ...state.api.flags, ...action.payload },
+				},
 			};
 		case HomeActions.SET_HOME_API_DATA:
 			return{
 				...state,
-		api: {
-			...state.api,
-			data: { ...state.api.data, ...action.payload },
-		},
+				api: {
+					...state.api,
+					data: { ...state.api.data, ...action.payload },
+				},
 			};
 		default:
 			return state;
