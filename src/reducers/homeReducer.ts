@@ -6,19 +6,21 @@ import { HomeActions } from '../actions/homeActions';
 export interface HomeState {
 	data: string[][],
 	columns: string[],
+	selectedDataIndex: number|null,
 	api: { 
 		flags: any,
 		data: any,
-	}
+	},
 }
 
 const defaultState = {
 	data: [[]],
 	columns: [],
+	selectedDataIndex: null,
 	api: { 
 		flags: {},
 		data: {},
-	}
+	},
 };
 
 function homeReducer(
@@ -35,7 +37,7 @@ function homeReducer(
 				columns: action.payload.columns,
 			};
 		case HomeActions.SET_HOME_API_FLAG:
-			return{
+			return {
 				...state,
 				api: {
 					...state.api,
@@ -43,13 +45,18 @@ function homeReducer(
 				},
 			};
 		case HomeActions.SET_HOME_API_DATA:
-			return{
+			return {
 				...state,
 				api: {
 					...state.api,
 					data: { ...state.api.data, ...action.payload },
 				},
 			};
+		case HomeActions.SAVE_DATA_INDEX:
+			return {
+				...state,
+				selectedDataIndex: action.payload.selectedDataIndex,
+			}
 		default:
 			return state;
 	}
