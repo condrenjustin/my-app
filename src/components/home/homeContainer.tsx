@@ -21,7 +21,6 @@ class HomeContainer extends React.Component<HomeContainerProps> {
     ];
 
     const { dispatch } = this.props;
-    debugger;
     dispatch(setTableActionCreator(data, columns));
   }
 
@@ -42,18 +41,23 @@ class HomeContainer extends React.Component<HomeContainerProps> {
       onRowsSelect: (currentRowsSelected:any, allRowsSelected:any) => this.handleRowSelection(currentRowsSelected[0]?.dataIndex),
     }
 
-    const greyBoxInfo = { 
-      name: "N/A",
-      company: "N/A",
-      city: "N/A",
-      state: "N/A",
-      };
+    const greyBoxInfo = [
+      { label: 'Name', value: 'N/A' },
+      { label: 'Company', value: 'N/A' },
+      { label: 'City', value: 'N/A' },
+      { label: 'State', value: 'N/A' },
+    ]
 
     if (reducedData.selectedDataIndex !== null && reducedData.selectedDataIndex !== undefined) {
-      greyBoxInfo.name = reducedData.homeData[reducedData.selectedDataIndex][0];
-      greyBoxInfo.company = reducedData.homeData[reducedData.selectedDataIndex][1];
-      greyBoxInfo.city = reducedData.homeData[reducedData.selectedDataIndex][2];
-      greyBoxInfo.state = reducedData.homeData[reducedData.selectedDataIndex][3];
+      // greyBoxInfo.name = reducedData.homeData[reducedData.selectedDataIndex][0];
+      // greyBoxInfo.company = reducedData.homeData[reducedData.selectedDataIndex][1];
+      // greyBoxInfo.city = reducedData.homeData[reducedData.selectedDataIndex][2];
+      // greyBoxInfo.state = reducedData.homeData[reducedData.selectedDataIndex][3];
+      greyBoxInfo.map((item:{ label:string, value:string }, index:number) => 
+        (
+          item.value = reducedData.homeData[reducedData.selectedDataIndex][index]
+        )
+      )
     }
 
     return (
@@ -65,7 +69,7 @@ class HomeContainer extends React.Component<HomeContainerProps> {
           tableTitle={title}
           data={reducedData.homeData}
           columns={reducedData.homeColumns}
-          selectedDataIndex={greyBoxInfo}
+          greyBoxInfo={greyBoxInfo}
         />
       </div>
     );

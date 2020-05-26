@@ -1,8 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/headerContainer';
-import Page1 from '../../page1';
-import Page2 from '../../page2';
 import HomeContainer from '../home/homeContainer';
+import AboutContainer from '../about/oldAboutContainer';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,8 +17,7 @@ class App extends React.Component{
         <HeaderContainer/>
         <Switch>
           <Route path="/" exact component={HomeContainer} />
-          <Route path="/Page1" exact component={Page1} />
-          <Route path="/Page2" exact component={Page2} />
+          <Route path="/About" exact component={AboutContainer} />
         </Switch>
         </div>
       </Router>

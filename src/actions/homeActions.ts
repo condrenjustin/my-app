@@ -36,3 +36,10 @@ export const saveDataIndexActionCreator = (selectedDataIndex:number) => {
 		payload: { selectedDataIndex },
 	};
 };
+
+export default {
+	setHomeFlagActionCreator,
+	setHomeDataActionCreator,
+	setTableActionCreator,
+	saveDataIndexActionCreator
+}

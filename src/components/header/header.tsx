@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
-import { AcUnit, AccessAlarm, DeckRounded } from '@material-ui/icons';
+import { AcUnit, AccessAlarm } from '@material-ui/icons';
 import {
   Grid,
   Button,
@@ -70,16 +70,10 @@ const Header = (props:HeaderProps) => {
                   Home
                 </MenuItem>
               </Link>
-              <Link style ={linkStyle} to='/Page1'>
+              <Link style ={linkStyle} to='/About'>
                 <MenuItem onClick={() => handleDrawerClick()}>
                   <AccessAlarm className={styles.iconSpacing} />
-                  Page 1
-                </MenuItem>
-              </Link>
-              <Link style ={linkStyle} to='/Page2'>
-                <MenuItem onClick={() => handleDrawerClick()}>
-                  <DeckRounded className={styles.iconSpacing} />
-                  Page 2
+                  About
                 </MenuItem>
               </Link>
             </div>
