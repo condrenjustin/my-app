@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/headerContainer';
 import HomeContainer from '../home/homeContainer';
-import AboutContainer from '../about/oldAboutContainer';
+import AboutContainer from '../about/aboutContainer';
 import {
   BrowserRouter as Router,
   Switch,
